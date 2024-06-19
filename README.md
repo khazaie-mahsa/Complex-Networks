@@ -27,7 +27,38 @@ set of challenges and limitations.
 
 # Model Fitting Approach
 
+Communities that were studied are:
+1. **Extreme communism:** giving every person the same income
+2. **Communism++:** a divided society defining two classes of the previous case with a fixed share
+3. **Eco-window:** providing equal probability to any income in a fixed, but possibly even an infinite interval -> 
+4. **Natural:** exponentially distributed income
+5. **Capitalism:** the Pareto-distribution characteristic to capitalism
+
+The following table shows degree distributions and my choice of modeling each case:
+
+| Community   | Degree distribution                                                                | Model                                                                                               | Description                                                               |
+|-------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| Communism   | Singular delta-distribution, peaked at the single value a: ρ( x ) = δ( x − a)      | Complete Graph                                                                                      | All incomes are equal                                                     |
+| Communism++ | Two-peak delta-distribution, ρ( x ) = w δ( x − a) + (1 − w) δ( x − b)              | Modeled with a complete graph to model the first class and leaf nodes to represent the second class | A two-class-society where all are equal but some of them are more equal   |
+| Natural     | [Exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) | Erdos-Renyi Model                                                                                   | -                                                                         |
+| Eco-window  | ρ(x) = 1/b−a[Θ(b − x) − Θ( a − x)]                                                 | Random degree sequence                                                                              | Everyone has the same chance for all of possible incomes between a and b. |
+| Capitalism  | [Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution)           | Barabashi-Albert Model                                                                              | -                                                                         |
+
+### Communism Graph
+![Communism_graphd3.png](..%2Fall-figures%2FNew%20folder%2FCommunism_graphd3.png)
+### Communism++ Graph
+![Degree_of_a_c++.png](figures/figures_model_fitting/Degree_of_a_c++.png)
+### Natural Graph
+![ER100.png](figures/figures_model_fitting/ER100.png)
+![ER500.png](figures/figures_model_fitting/ER500.png)
+### Eco-window Graph
+![Degree_of_a_random_graph_500.png](figures/figures_model_fitting/Degree_of_a_random_graph_500.png)
+### Capitalism Graph
+![Degree_of_a_BA_graph.png](figures/figures_model_fitting/Degree_of_a_BA_graph.png)
+
 ## Results
+
+For a network size of 100, the following results were obtained:
 
 | Network                             | Network Size | Properties | Gini Index | Gintropy |
 |-------------------------------------|--------------|------------|------------|----------|
@@ -36,7 +67,7 @@ set of challenges and limitations.
 | Random degree sequence (Eco-window) | 100          | a=1, b=10  | 0.2924     | 0.2187   |
 | BA (Capitalism)                     | 100          | m=5        | 0.3009     | 0.2311   |
 
-Average Gini and Gintropy for 100 simulations
+Average Gini and Gintropy for 100 simulations and network of size 500:
 
 | Network                                  | Network Size                | Properties | Avg Gini Index | Avg Gintropy | Expected Gini |
 |------------------------------------------|-----------------------------|------------|----------------|--------------|---------------|
@@ -61,40 +92,18 @@ Average Gini and Gintropy for 100 simulations
 | WS Graph                                 | 500                         | K=4, p=0.4 | 0.1524         | 0.1033       | ?             |
 | Complete graph                           | 500                         | -          | 0.0            | 0.0          | 0             |
 
-| Network                                  | Network Size                | Properties | Avg H Index | Avg Gintropy | Expected H |
-|------------------------------------------|-----------------------------|------------|-------------|--------------|------------|
-| Regular (Communism)                      | 500                         | -          | 0.0         | 0            | 0          |
-| Star network with n hubs (Communism++)\* | 404 (4 hubs and 100 leaves) | -          | 0.49748     | 0.49746      | 0.4950     |
-| Star network with n hubs (Communism++)\* | 84 (4 hubs and 20 leaves)   | -          | 0.48726     | 0.4866       | 0.4761     |
-| Star network with n hubs (Communism++)\* | 16 (4 hubs and 3 leaves)    | -          | 0.416666    | 0.3999       | 0.375      |
-| ER (Natural)                             | 500                         | p = 0.1    | 0.07572     | 0.0521       | 0.002236   |
-| ER (Natural)                             | 500                         | p = 0.4    | 0.03084     | 0.0208       | 0.001118   |
-| Random degree sequence (Eco-window)      | 500                         | a=1, b=10  | 0.29855     | 0.2270       |            |
-| Random degree sequence (Eco-window)      | 500                         | a=5, b=10  | 0.12907     | 0.0989       |            |
-| Random degree sequence (Eco-window)      | 500                         | a=5, b=100 | 0.30403     | 0.2260       |            |
-| BA (Capitalism)                          | 500                         | m=5        | 0.34872     | 0.2642       |            |
-| BA (Capitalism)                          | 500                         | m=10       | 0.32417     | 0.2452       |            |
-| BA (Capitalism)                          | 500                         | m=2        | 0.38574     | 0.2958       |            |
-| Star Graph                               | 500                         | -          | 0.49900000  | 0.498        | 0.5        |
-| Path Graph                               | 500                         | -          | 0.0         | 0.0          | ?          |
-| WS Graph                                 | 500                         | K=2, p=0.1 | 0.08312     | 0.0449       | ?          |
-| WS Graph                                 | 500                         | K=4, p=0.1 | 0.07109     | 0.0408       | 0.07       |
-| WS Graph                                 | 500                         | K=2, p=0.2 | 0.13825     | 0.0817       | ?          |
-| WS Graph                                 | 500                         | K=2, p=0.4 | 0.20674     | 0.1335       | ?          |
-| WS Graph                                 | 500                         | K=4, p=0.4 | 0.1522      | 0.1033       | 0.15       |
-| Complete graph                           | 500                         | -          | 0.0         | 0.0          | 0          |
 
-\*The hubs create a complete graph
+*The hubs create a complete graph
 
 ## Figures
 
-|                                          Communism                                           |                                 Natural                                  |
-|:--------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------:|
-| <img src="F:\projects\Complex-Networks\figures\Figure_2_Communism_regular_lorenz_curve.png"> | <img src="F:\projects\Complex-Networks\figures\Figure_2_natural_er.png"> |
+|                                              Communism                                              |                           Natural                           |
+|:---------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------:|
+| ![Figure_2_Communism_regular_lorenz_curve.png](figures/Figure_2_Communism_regular_lorenz_curve.png) | ![Figure_2_natural_er.png](figures/Figure_2_natural_er.png) |
 
-|                                  Eco-window                                   |                                  Capitalism                                   |
-|:-----------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|
-| <img src="F:\projects\Complex-Networks\figures\Figure_2_eco_window_1_10.png"> | <img src="F:\projects\Complex-Networks\figures\Figure_2_capitalismBA_m5.png"> |
+|                              Eco-window                               |                              Capitalism                               |
+|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
+| ![Figure_2_eco_window_1_10.png](figures/Figure_2_eco_window_1_10.png) | ![Figure_2_capitalismBA_m5.png](figures/Figure_2_capitalismBA_m5.png) |
 
 # Graph Neural Network Approach
 
@@ -105,18 +114,18 @@ two approaches and train on two sets of inputs:
 2. Finding a dataset that represents wealth distribution in a society based on real-world data.
 
 The fist approach is fairly straight-forward.
-Regarding the second approach, I was able to find the statistics for (wealth distribution in the US since
-1989).[https://www.federalreserve.gov/releases/z1/dataviz/dfa/distribute/chart/]
+Regarding the second approach, I was able to find the statistics for [wealth distribution in the US since
+1989](https://www.federalreserve.gov/releases/z1/dataviz/dfa/distribute/chart/)
 
 I used this data to create a graph in which **the degree distribution represents the wealth distribution** of a
 capitalist society.
 I chose to study wealth distribution in the first quarter of 2024 (2024:Q1 in the chart below). It's worth mentioning
 that this data
-can be used to model wealth distribution as a **temporal network** and study how it has changed to gain more insight
+can be used to model wealth distribution as a _temporal network_ and study how it has changed to gain more insight
 into how wealth distribution
 impacts other the society overtime.
 
-![dataset.jpg](figures%2Fdataset.jpg)
+![dataset.jpg](figures/dataset.jpg)
 
 This is the data for the first quarter of 2024:
 
@@ -142,11 +151,11 @@ It can be seen that we have the following:
 - The bottom 50%, have 2.5% of the total networth
 
 So in a 1000-person community:
-1 person has 13.6% of the total wealth
-9 people have 16.8% of the total wealth
-90 people have 36.6% of the total wealth
-900 people have 30.5% of the total wealth
-500 people have 2.5% of the total wealth
+- 1 person has 13.6% of the total wealth
+- 9 people have 16.8% of the total wealth
+- 90 people have 36.6% of the total wealth
+- 900 people have 30.5% of the total wealth
+- 500 people have 2.5% of the total wealth
 
 If we think of:
 
@@ -171,23 +180,23 @@ Now let's see how the graph turns out:
 
 #### Network1: 10 nodes
 
-![final_graph_10.png](..%2Ffinal_graph_10.png)
+![final_graph_10.png](figures/final_graph_10.png)
 
 #### Network2: 100 nodes
 
-![final_graph_100.png](..%2Ffinal_graph_100.png)
+![final_graph_100.png](figures/final_graph_100.png)
 
 #### Network3: 1000 nodes
 
-![final_graph_1000.png](..%2Ffinal_graph_1000.png)
+![final_graph_1000_small.png](figures/final_graph_1000_small.png)
 
 #### Network4: 3000 nodes
 
-![final_graph_1000_small.png](..%2Ffinal_graph_1000_small.png)
+![final_3000_graph.png](figures/final_3000_graph.png)
 
 ## Training
 
-I used [NetGAN](https://github.com/mmiller96/netgan_pytorch) with the following parameters for training:
+I used [NetGAN](https://github.com/mmiller96/netgan_pytorch) [2] with the following parameters for training:
 
 ```python
 max_iterations = 20000,
@@ -211,30 +220,32 @@ seed = 20
 
 ### Result
 
-This the results for training on Network3 (1000 nodes):
-![results.png](..%2F1000%2Fresults.png)
+Results for training on Network3 (1000 nodes):
+![results_1000.png](figures/result/results_1000.png)
 
-This is the results of training on Network4 (3000 nodes):
+Results of training on Network4 (3000 nodes):
 
 ```commandline
 roc: 0.5233   avp: 0.5155   eo: 0.0090
 finished after 799 iterations
 ```
 
-![result.png](..%2F3000%2Fresult.png)
+![results_3000.png](figures/result/results_3000.png)
 
 As you can see, the average_precision is pretty unsatisfactory, so I perhaps should try changing hyperparameters of
 training to
 see if I can achieve better evaluation metrics.
 
 Next steps:
-
-1. Verify that the graph created from real-world data actually represents the data
-2. Tune hyperparameters of the model for better Average Precision
-3. Try other evaluation metrics such as F1-score
-4. Finally, use the synthetic graphs generated by NetGAN to measure Gintropy and Gini index of the graph and check
+1. Use an exponential distribution for `Natural` community using `configuration_model` of networkx
+2. Verify that the graph created from real-world data actually represents the data
+3. Tune hyperparameters of the model for better Average Precision
+4. Try other evaluation metrics such as F1-score
+5. Finally, use the synthetic graphs generated by NetGAN to measure Gintropy and Gini index of the graph and check
    to see if the values are persistent with table 1.
 
+# References
 [1]
-Biró, T.S.; Néda, Z. Gintropy: Gini Index Based Generalization of Entropy. Entropy 2020, 22,
-879. https://doi.org/10.3390/e22080879
+Biró, Tamás S., and Zoltán Néda. "Gintropy: Gini index based generalization of entropy." Entropy 22.8 (2020): 879.
+[2]
+Bojchevski, Aleksandar, et al. "Netgan: Generating graphs via random walks." International conference on machine learning. PMLR, 2018.

@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd15a9b4-482a-4e61-83c4-1247800f567a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../H_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/../H_index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../capitalism.py" beforeDir="false" afterPath="$PROJECT_DIR$/../capitalism.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netgan_files/demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../netgan_files/demo.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netgan_files/netgan/netgan.py" beforeDir="false" afterPath="$PROJECT_DIR$/../netgan_files/netgan/netgan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netgan_files/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../netgan_files/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
