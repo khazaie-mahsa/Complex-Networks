@@ -47,7 +47,7 @@ The following table shows degree distributions and my choice of modeling each ca
 | Capitalism  | [Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution)           | Barabashi-Albert Model                                                                              | -                                                                         |
 
 ### Communism Graph
-![Communism_graphd3.png](..%2Fall-figures%2FNew%20folder%2FCommunism_graphd3.png)
+![Communism_graphd3.png](figures/figures_model_fitting/Communism_graphd3.png)
 ### Communism++ Graph
 ![Degree_of_a_c++.png](figures/figures_model_fitting/Degree_of_a_c++.png)
 ### Natural Graph
