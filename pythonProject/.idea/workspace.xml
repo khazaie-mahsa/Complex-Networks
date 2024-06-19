@@ -51,6 +51,11 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.NetGAN_Capitalism">
     <configuration name="Create_Graph" type="PythonConfigurationType" factoryName="Python">
       <module name="pythonProject" />
