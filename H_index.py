@@ -8,12 +8,12 @@ def calculate_w(degrees, i):
 
 def calculate_h_index(array):
     # array = np.sort(array)
-    # total_citations = sum(array)
-    # cum_citations = np.cumsum(array)
-    # cum_share = cum_citations / total_citations
+    # total_wealth = sum(array)
+    # cum_wealth = np.cumsum(array)
+    # cum_share = cum_wealth / total_wealth
     # n = np.shape(array)[0]
     # x_percent = i / n
-    # y_percent = np.cumsum(array[0:i]) / cum_citations
+    # y_percent = np.cumsum(array[0:i]) / cum_wealth
 
     n = np.shape(array)[0]
     h = 0

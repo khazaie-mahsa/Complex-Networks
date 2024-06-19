@@ -21,6 +21,18 @@ def plot_graph(G, size, m, gini):
     ax0.set_axis_off()
 
 
+def calculate_heterogenity_indes(G):
+    degree = G.degree()
+    wealth_np = degree_to_np_array(degree)
+    gini = calculate_gini(wealth_np)
+    print(f"gini capitalism_ba: {gini}")
+    gintropy = calculate_gintropy_max(wealth_np)
+    print(gintropy)
+    # plot_lorenz_curve(wealth_np)
+    plot_graph(G, n, m, gini)
+    h = calculate_unified_h(wealth_np, nx.number_of_nodes(G))
+    return gini, gintropy, h
+
 def capitalism_ba(n, m):
     G = nx.barabasi_albert_graph(n, m)
     degree = G.degree()
@@ -35,23 +47,28 @@ def capitalism_ba(n, m):
     return gini, gintropy, h
 
 
-avg_gini = 0
-avg_gintropy = 0
-avg_h = 0
-simulation_size = 100
+def create_capitalism_graph(n, m):
+    G = nx.barabasi_albert_graph(n, m)
+    return G
 
-for _ in range(0, simulation_size):
-    network_size = 500
-    m = 5
-    gini, gintropy, h = capitalism_ba(network_size, m)
-    avg_gini += gini
-    avg_gintropy += gintropy
-    avg_h += h
 
-avg_gini /= simulation_size
-avg_gintropy /= simulation_size
-avg_h /= simulation_size
-
-print(f"avg_gini {avg_gini}")
-print(f"avg_gintropy {avg_gintropy}")
-print(f"avg_h {avg_h}")
+# avg_gini = 0
+# avg_gintropy = 0
+# avg_h = 0
+# simulation_size = 100
+#
+# for _ in range(0, simulation_size):
+#     network_size = 500
+#     m = 5
+#     gini, gintropy, h = capitalism_ba(network_size, m)
+#     avg_gini += gini
+#     avg_gintropy += gintropy
+#     avg_h += h
+#
+# avg_gini /= simulation_size
+# avg_gintropy /= simulation_size
+# avg_h /= simulation_size
+#
+# print(f"avg_gini {avg_gini}")
+# print(f"avg_gintropy {avg_gintropy}")
+# print(f"avg_h {avg_h}")

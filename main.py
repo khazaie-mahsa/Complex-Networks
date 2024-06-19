@@ -1,5 +1,5 @@
 import networkx as nx
-import quantecon as qe
+# import quantecon as qe
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
@@ -190,18 +190,18 @@ def gini_paper_implementation(array):
 
 def calculate_gintropy_max(array):
     array = np.sort(array)
-    total_citations = sum(array)
-    cum_citations = np.cumsum(array)
-    cum_share = cum_citations / total_citations
+    total_wealth = sum(array)
+    cum_wealth = np.cumsum(array)
+    cum_share = cum_wealth / total_wealth
     diagonal = np.linspace(0, 1, len(array))
     return np.max(diagonal - cum_share)
 
 
 def plot_lorenz_curve(array):
     array = np.sort(array)
-    total_citations = sum(array)
-    cum_citations = np.cumsum(array)
-    cum_share = cum_citations / total_citations
+    total_wealth = sum(array)
+    cum_wealth = np.cumsum(array)
+    cum_share = cum_wealth / total_wealth
     diagonal = np.linspace(0, 1, len(array))
     plt.plot(diagonal, diagonal, linestyle='--', color='gray')
     plt.plot(1 - diagonal, 1 - cum_share, marker='o', markersize=3, color='blue')

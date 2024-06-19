@@ -1,0 +1,6 @@
+dfa-networth-shares.csv
+*.npz
+*.pickle
+*.pt
+\netgan_files
+Final.py
