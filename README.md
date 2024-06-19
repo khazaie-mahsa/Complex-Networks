@@ -8,17 +8,19 @@ communities to indicate how heterogeneous is wealth distribution in those commun
 since
 we all have a sense of how wealth distribution is different in different societies. Take a communist society as an
 example. We expect
-that heterogeneity index should be 0 zero or near zero for this community. And ofcourse on the other side we have a
+that heterogeneity index should be zero or near zero for this community. And ofcourse on the other side we have a
 capitalist society
 for which we expect to get a high heterogeneity index.
-In this implementation, I am trying to show that although the authors' view has been purely mathematical,
+</br>
+In this implementation, I am trying to show that although the authors' view has been purely mathematical, these claims
+can be verified once applied to real-world datasets and scenarios.
+</br>
 This implementation consists of two parts:
 
 1. Fitting different network models (BA, WS,...) to represent different communities discussed in the paper
-   (capitalist, communist, natural and eco-window) and verifying that the networks actually represents the said
-   community bt
-   calculating their Gintropy and Gini index to see if the values are close to what we should get according to Biró et
-   al (See section # of the paper).
+   (capitalist, communist, natural and eco-window) and verifying that the networks actually represent the said
+   communities by calculating their Gintropy and Gini index to see if the values are close to what we should get according to Biró et
+   al (See Table 1 of the paper).
 2. Using Generative GNNs to create those networks instead of figuring out the parameters ourselves.
 
 The second approach requires that we acquire the wealth distribution data of the said communities, which comes with it's
@@ -30,7 +32,7 @@ set of challenges and limitations.
 Communities that were studied are:
 1. **Extreme communism:** giving every person the same income
 2. **Communism++:** a divided society defining two classes of the previous case with a fixed share
-3. **Eco-window:** providing equal probability to any income in a fixed, but possibly even an infinite interval -> 
+3. **Eco-window:** providing equal probability to any income in a fixed, but possibly even an infinite interval 
 4. **Natural:** exponentially distributed income
 5. **Capitalism:** the Pareto-distribution characteristic to capitalism
 
